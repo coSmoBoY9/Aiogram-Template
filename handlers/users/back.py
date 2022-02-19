@@ -1,4 +1,5 @@
 from os import stat
+from pyexpat.errors import messages
 from loader import dp
 from aiogram import types
 from states.kafe import StatesKafe
@@ -20,10 +21,17 @@ async def back_prod(message: types.Message):
 	await StatesKafe.category.set()
 
 @dp.message_handler(text="ORQAGA ↩️", state=StatesKafe.amount)
-async def back_amount(message: types.Message):
-	await message.answer("Batafsil ma'lumot uchun taomni tanlang", reply_markup=baliqlar)
+async def back_amount(message: types.Message, state: FSMContext):
+	data = await state.get_data()
+	cat = data.get('cat')
+	if cat == "Baliq 🐠":
+		await message.answer("Batafsil ma'lumot uchun taomni tanlang", reply_markup=baliqlar)
+	elif cat == "Ichimliklar 🥤":
+		await message.answer("Batafsil ma'lumot uchun taomni tanlang", reply_markup=Coke)
+	elif cat == "Ikkinchi ovqatlar 🍛":
+		pass
 	await StatesKafe.product.set()
-
+	
 @dp.message_handler(text="Bosh Sahifa 🏠", state=StatesKafe.amount)
 async def back_amount(message: types.Message, state: FSMContext):
 	await message.answer("Buyurtma berishni boshlaymizmi?", reply_markup=menu)
