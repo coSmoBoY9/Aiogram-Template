@@ -32,7 +32,7 @@ async def back_amount(message: types.Message, state: FSMContext):
 		pass
 	await StatesKafe.product.set()
 	
-@dp.message_handler(text="Bosh Sahifa 🏠", state=StatesKafe.amount)
+@dp.message_handler(text="Bosh Sahifa 🏠", state=StatesKafe)
 async def back_amount(message: types.Message, state: FSMContext):
 	await message.answer("Buyurtma berishni boshlaymizmi?", reply_markup=menu)
 	await state.finish()
