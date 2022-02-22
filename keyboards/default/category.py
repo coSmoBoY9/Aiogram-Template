@@ -14,3 +14,10 @@ wolves = ReplyKeyboardMarkup(
 ],
 	resize_keyboard=True
 )
+foxes = ReplyKeyboardMarkup(
+	keyboard=[
+		[KeyboardButton(text="Мясо по-гречески"), KeyboardButton(text="Мясо по-французски")],
+		[KeyboardButton(text="Бифштекс"), KeyboardButton(text="ORQAGA ↩️")],
+],
+	resize_keyboard=True
+)

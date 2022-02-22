@@ -1,5 +1,5 @@
-from os import stat
-from pyexpat.errors import messages
+
+from keyboards.default.ikkinchi import ikki
 from loader import dp
 from aiogram import types
 from states.kafe import StatesKafe
@@ -29,7 +29,7 @@ async def back_amount(message: types.Message, state: FSMContext):
 	elif cat == "Ichimliklar 🥤":
 		await message.answer("Batafsil ma'lumot uchun taomni tanlang", reply_markup=Coke)
 	elif cat == "Ikkinchi ovqatlar 🍛":
-		pass
+		await message.answer("Batafsil ma'lumot uchun taomni tanlang", reply_markup=ikki)
 	await StatesKafe.product.set()
 	
 @dp.message_handler(text="Bosh Sahifa 🏠", state=StatesKafe)

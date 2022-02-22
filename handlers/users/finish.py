@@ -4,6 +4,7 @@ from loader import dp
 from aiogram import types
 from states.kafe import StatesKafe
 from aiogram.dispatcher import FSMContext
+from keyboards.default.ikkinchi import ikki
 
 
 @dp.message_handler(state=StatesKafe.amount)
@@ -21,5 +22,6 @@ async def order(message: types.Message, state: FSMContext):
 		await message.answer("Savatchaga🛒 qo'shildi")
 		await message.answer("Xo'sh davom etamizmi 😍?", reply_markup=Coke)
 	elif cat == "Ikkinchi ovqatlar 🍛":
-		pass
+		await message.answer("Savatchaga🛒 qo'shildi")
+		await message.answer("Xo'sh davom etamizmi 😍?", reply_markup=ikki)
 	await StatesKafe.product.set()
