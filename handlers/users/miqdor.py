@@ -48,6 +48,19 @@ async def get_menu(message: types.Message):
 
 @dp.message_handler(text="Мясо по-гречески", state=StatesKafe.product)
 async def get_menu(message: types.Message):
-	await message.answer_photo(photo="https://ibb.co/NrCZ1Mb", caption = "Мясо по-гречески\n\nNarxi: 28000 so'm")
+	await message.answer_photo(photo="https://ibb.co/Mp3bsPp", caption = "Мясо по-гречески\n\nNarxi: 28000 so'm")
+	await message.answer("Maxsulotni Savatga🛒 qo'shish uchun, sonini kiriting 👇🏼", reply_markup=miqdorlar)
+	await StatesKafe.next()
+
+@dp.message_handler(text="Мясо по-французски", state=StatesKafe.product)
+async def get_menu(message: types.Message):
+	await message.answer_photo(photo="https://ibb.co/7Nk17Jf", caption = "Мясо по-французски\n\nNarxi: 28000 so'm")
+	await message.answer("Maxsulotni Savatga🛒 qo'shish uchun, sonini kiriting 👇🏼", reply_markup=miqdorlar)
+	await StatesKafe.next()
+
+
+@dp.message_handler(text="Бифштекс", state=StatesKafe.product)
+async def get_menu(message: types.Message):
+	await message.answer_photo(photo="https://ibb.co/7S18NNZ", caption = "Мясо по-французски\n\nNarxi: 20000 so'm")
 	await message.answer("Maxsulotni Savatga🛒 qo'shish uchun, sonini kiriting 👇🏼", reply_markup=miqdorlar)
 	await StatesKafe.next()
